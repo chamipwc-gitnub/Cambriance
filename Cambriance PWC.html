@@ -1,0 +1,689 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prince of Wales' College, Moratuwa - 150th Anniversary (1876-2026)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter & Cinzel for Royal Look -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        powPurple: '#4A0E4E',
+                        powDeepPurple: '#2C0630',
+                        powGold: '#FFD700',
+                        powLightGold: '#FFE55C',
+                        powMaroon: '#800020',
+                        powDarkMaroon: '#500014'
+                    },
+                    fontFamily: {
+                        cinzel: ['Cinzel', 'serif'],
+                        inter: ['Inter', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #120415;
+            color: #f3f4f6;
+        }
+        .royal-gradient {
+            background: linear-gradient(135deg, #2C0630 0%, #4A0E4E 50%, #500014 100%);
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FFE55C 0%, #FFD700 50%, #CCA100 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-border {
+            border-color: #FFD700;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #120415;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #800020;
+            border-radius: 5px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #FFD700;
+        }
+    </style>
+</head>
+<body class="bg-[#120415] text-gray-100 min-h-screen flex flex-col selection:bg-yellow-500 selection:text-black">
+
+    <!-- Navigation Bar -->
+    <nav class="sticky top-0 z-50 bg-[#2C0630]/95 backdrop-blur-md border-b border-yellow-500/30 shadow-2xl">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Logo & Title -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center shadow-lg border-2 border-yellow-300">
+                        <i class="fa-solid fa-graduation-cap text-[#2C0630] text-xl"></i>
+                    </div>
+                    <div>
+                        <span class="font-cinzel font-bold text-lg sm:text-xl tracking-wider text-yellow-400 block">PRINCE OF WALES' COLLEGE</span>
+                        <span class="text-xs uppercase tracking-widest text-purple-300">Moratuwa • 150th Sesquicentennial</span>
+                    </div>
+                </div>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+                    <a href="#hero" class="hover:text-yellow-400 transition-colors">Home</a>
+                    <a href="#principal" class="hover:text-yellow-400 transition-colors">Principal</a>
+                    <a href="#history" class="hover:text-yellow-400 transition-colors">Heritage</a>
+                    <a href="#museum" class="hover:text-yellow-400 transition-colors">Vintage Archive</a>
+                    <a href="#cmbu-channel" class="hover:text-yellow-400 transition-colors">CMBU Media</a>
+                    <a href="#wishes" class="hover:text-yellow-400 transition-colors">Wishes Wall</a>
+                </div>
+
+                <!-- 150 Badge CTA -->
+                <div class="hidden lg:flex items-center bg-gradient-to-r from-yellow-500 to-amber-600 text-purple-950 font-cinzel font-bold px-4 py-2 rounded-full shadow-lg text-xs uppercase tracking-wider animate-pulse">
+                    <i class="fa-solid fa-crown mr-2"></i> 1876 - 2026
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-yellow-400 hover:text-white focus:outline-none p-2">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-[#2C0630] border-t border-yellow-500/20 px-4 pt-2 pb-4 space-y-2">
+            <a href="#hero" class="block py-2 text-gray-200 hover:text-yellow-400">Home</a>
+            <a href="#principal" class="block py-2 text-gray-200 hover:text-yellow-400">Principal</a>
+            <a href="#history" class="block py-2 text-gray-200 hover:text-yellow-400">Heritage</a>
+            <a href="#museum" class="block py-2 text-gray-200 hover:text-yellow-400">Vintage Archive</a>
+            <a href="#cmbu-channel" class="block py-2 text-gray-200 hover:text-yellow-400">CMBU Media</a>
+            <a href="#wishes" class="block py-2 text-gray-200 hover:text-yellow-400">Wishes Wall</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="relative royal-gradient py-20 lg:py-32 overflow-hidden border-b border-yellow-500/20">
+        <div class="absolute -top-40 -right-40 w-96 h-96 bg-purple-600/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute -bottom-40 -left-40 w-96 h-96 bg-red-800/20 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <div class="inline-flex items-center space-x-2 bg-yellow-400/10 border border-yellow-400/40 px-5 py-2 rounded-full mb-8 backdrop-blur-sm">
+                <i class="fa-solid fa-star text-yellow-400"></i>
+                <span class="font-cinzel text-yellow-300 text-xs sm:text-sm tracking-widest uppercase font-bold">Celebrating 150 Years of Glorious Legacy</span>
+                <i class="fa-solid fa-star text-yellow-400"></i>
+            </div>
+
+            <h1 class="font-cinzel text-4xl sm:text-6xl lg:text-7xl font-black tracking-wider uppercase mb-6 text-white drop-shadow-lg">
+                Prince of Wales' College <br>
+                <span class="gold-gradient-text text-3xl sm:text-5xl lg:text-6xl">Moratuwa • Sesquicentennial</span>
+            </h1>
+
+            <p class="max-w-3xl mx-auto text-base sm:text-lg lg:text-xl text-gray-300 font-light leading-relaxed mb-10">
+                Founded in 1876 by the great philanthropist <span class="text-yellow-400 font-medium">Sir Charles Henry de Soysa</span>. A beacon of academic brilliance, discipline, sportsmanship, and unbroken tradition for a century and a half.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-6 mb-12">
+                <div class="bg-purple-900/60 border border-yellow-500/40 px-6 py-3 rounded-xl backdrop-blur-md shadow-lg">
+                    <span class="block text-xs uppercase tracking-widest text-yellow-400 font-semibold">Royal Motto</span>
+                    <span class="font-cinzel text-lg sm:text-xl font-bold text-white">"Ich Dien" (I Serve)</span>
+                </div>
+                <div class="bg-purple-900/60 border border-yellow-500/40 px-6 py-3 rounded-xl backdrop-blur-md shadow-lg">
+                    <span class="block text-xs uppercase tracking-widest text-yellow-400 font-semibold">Latin Motto</span>
+                    <span class="font-cinzel text-lg sm:text-xl font-bold text-white">"Nihil Per Saltum" (Nothing Through a Leap)</span>
+                </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#cmbu-channel" class="w-full sm:w-auto bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-purple-950 font-cinzel font-bold px-8 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-video"></i>
+                    <span>Watch CMBU Live & Archive</span>
+                </a>
+                <a href="#wishes" class="w-full sm:w-auto bg-purple-800/80 hover:bg-purple-700 text-yellow-300 border border-yellow-500/40 font-cinzel font-bold px-8 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 text-center flex items-center justify-center space-x-2">
+                    <i class="fa-solid fa-pen-nib"></i>
+                    <span>Leave Cambrian Wish</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Statistics Bar -->
+    <section class="bg-purple-950 border-b border-yellow-500/20 py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800">
+                    <div class="font-cinzel text-3xl lg:text-4xl font-bold text-yellow-400 mb-1">150</div>
+                    <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Years of Excellence</div>
+                </div>
+                <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800">
+                    <div class="font-cinzel text-3xl lg:text-4xl font-bold text-yellow-400 mb-1">1876</div>
+                    <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Year Founded</div>
+                </div>
+                <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800">
+                    <div class="font-cinzel text-3xl lg:text-4xl font-bold text-yellow-400 mb-1">4,000+</div>
+                    <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Active Cambrians</div>
+                </div>
+                <div class="p-4 rounded-xl bg-purple-900/30 border border-purple-800">
+                    <div class="font-cinzel text-3xl lg:text-4xl font-bold text-yellow-400 mb-1">50+</div>
+                    <div class="text-xs sm:text-sm text-gray-300 uppercase tracking-wider">Clubs & Societies</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Principal's Message Section -->
+    <section id="principal" class="py-20 bg-[#16051A]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-yellow-400 uppercase tracking-wider">Principal's Address</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-400 mt-2 text-sm sm:text-base">Guiding the proud tradition into our historic 150th year</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-purple-950/60 border border-yellow-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl">
+                <div class="lg:col-span-4 text-center">
+                    <div class="relative inline-block">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-amber-600 rounded-2xl blur opacity-75"></div>
+                        <div class="relative w-64 h-72 sm:w-72 sm:h-80 mx-auto rounded-2xl overflow-hidden border-2 border-yellow-400 shadow-xl bg-purple-900">
+                            <img src="https://placehold.co/400x500/4A0E4E/FFD700?text=Captain+Wasantha+Kumara+Waduge" alt="Principal Captain Wasantha Kumara Waduge" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-white mt-6">Captain Wasantha Kumara Waduge</h3>
+                    <p class="text-yellow-400 text-sm font-medium mt-1">Principal, Prince of Wales' College</p>
+                    <span class="inline-block mt-2 bg-purple-900 text-purple-200 text-xs px-3 py-1 rounded-full border border-purple-700">Moratuwa, Sri Lanka</span>
+                </div>
+
+                <div class="lg:col-span-8 space-y-6 text-gray-300 font-light leading-relaxed">
+                    <div class="flex items-center space-x-3 text-yellow-400">
+                        <i class="fa-solid fa-quote-left text-3xl opacity-60"></i>
+                        <span class="font-cinzel font-bold text-lg text-white">A Sesquicentennial Milestone of Pride & Honor</span>
+                    </div>
+                    <p class="text-base sm:text-lg">
+                        "It is with profound gratitude and immense pride that we celebrate the 150th anniversary of Prince of Wales’ College, Moratuwa. Established in 1876 through the magnificent generosity of Sir Charles Henry de Soysa, our esteemed institution has stood as an unyielding bastion of knowledge, character, and discipline."
+                    </p>
+                    <p class="text-sm sm:text-base">
+                        "Over the past century and a half, generations of Cambrians have walked these historic halls, carrying forward our sacred mottos <span class="text-yellow-400 font-semibold">'Ich Dien'</span> and <span class="text-yellow-400 font-semibold">'Nihil Per Saltum'</span> into every corner of the globe. As we mark this landmark sesquicentennial year, we honor our pioneers, celebrate our current achievements, and lay down a visionary path for the future."
+                    </p>
+                    <div class="pt-4 border-t border-purple-900/80 flex items-center justify-between">
+                        <div>
+                            <span class="block font-cinzel text-yellow-400 font-bold">Capt. Wasantha Kumara Waduge</span>
+                            <span class="text-xs text-gray-400">Principal</span>
+                        </div>
+                        <div class="font-cinzel text-sm text-yellow-400/80 italic">
+                            "May the Lamb of God guard this school"
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Heritage & History Section -->
+    <section id="history" class="py-20 royal-gradient border-t border-b border-yellow-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-yellow-400 uppercase tracking-wider">Our Storied Heritage</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-300 mt-2 text-sm sm:text-base">From 1876 to 2026: 150 Years of History</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl hover:border-yellow-400 transition">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400 text-purple-950 flex items-center justify-center font-cinzel font-bold text-lg mb-6 shadow-md">
+                        1876
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-white mb-3">Foundation by Sir Charles Henry de Soysa</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Following the royal visit of the Prince of Wales in 1875, the greatest philanthropist in Ceylonese history, Sir Charles Henry de Soysa, established twin colleges in Moratuwa, opening on September 14, 1876.
+                    </p>
+                </div>
+
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl hover:border-yellow-400 transition">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400 text-purple-950 flex items-center justify-center font-cinzel font-bold text-lg mb-6 shadow-md">
+                        1933
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-white mb-3">Birth of the "Battle of the Golds"</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        The inauguration of the annual big match cricket encounter against St. Sebastian’s College, Moratuwa. This legendary fixture has since grown into one of the country's most vibrant sporting spectacles.
+                    </p>
+                </div>
+
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl p-6 sm:p-8 backdrop-blur-md shadow-xl hover:border-yellow-400 transition">
+                    <div class="w-12 h-12 rounded-xl bg-yellow-400 text-purple-950 flex items-center justify-center font-cinzel font-bold text-lg mb-6 shadow-md">
+                        2026
+                    </div>
+                    <h3 class="font-cinzel text-xl font-bold text-white mb-3">The Sesquicentennial Celebration</h3>
+                    <p class="text-gray-300 text-sm leading-relaxed">
+                        Celebrating 150 glorious years of molding exceptional young men, producing national leaders, cricketers, scholars, and professionals who serve across the globe under the banner of 'Ich Dien'.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vintage Archive & Museum Gallery -->
+    <section id="museum" class="py-20 bg-[#120415]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-yellow-400 uppercase tracking-wider">Vintage Archive & Museum Gallery</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-400 mt-2 text-sm sm:text-base">Explore historical photographs, old architecture, sports legends, and rare archival treasures</p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-10">
+                <button onclick="filterGallery('all')" class="gallery-tab active-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-cinzel font-bold bg-yellow-400 text-purple-950 shadow-md transition">All Treasures</button>
+                <button onclick="filterGallery('architecture')" class="gallery-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-cinzel font-bold bg-purple-900/80 text-gray-200 hover:bg-purple-800 border border-purple-700 transition">Old Architecture</button>
+                <button onclick="filterGallery('founder')" class="gallery-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-cinzel font-bold bg-purple-900/80 text-gray-200 hover:bg-purple-800 border border-purple-700 transition">Founder & Pioneers</button>
+                <button onclick="filterGallery('sports')" class="gallery-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-cinzel font-bold bg-purple-900/80 text-gray-200 hover:bg-purple-800 border border-purple-700 transition">Historic Cricket & Sports</button>
+                <button onclick="filterGallery('cadet')" class="gallery-tab px-5 py-2.5 rounded-full text-xs sm:text-sm font-cinzel font-bold bg-purple-900/80 text-gray-200 hover:bg-purple-800 border border-purple-700 transition">Cadets & Uniforms</button>
+            </div>
+
+            <!-- Gallery Grid -->
+            <div id="gallery-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="gallery-item architecture bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=Original+College+Hall+1876" alt="Original College Hall" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">1876 Archive</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">Original College Main Hall</h3>
+                        <p class="text-gray-300 text-sm">The historic Victorian-style main building commissioned by Sir Charles Henry de Soysa in the late 19th century.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item founder bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=Sir+Charles+Henry+de+Soysa" alt="Founder Sir Charles Henry de Soysa" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">Founder</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">Sir Charles Henry de Soysa</h3>
+                        <p class="text-gray-300 text-sm">Portrait of the legendary Ceylonese philanthropist and visionary founder of Prince of Wales' and Princess of Wales' Colleges.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item sports bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=Early+Cricket+Team+1920s" alt="Early Cricket Team" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">Sports History</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">Cambrian Cricket Team (1920s)</h3>
+                        <p class="text-gray-300 text-sm">Archival team photo capturing early generations of Cambrian cricketers who laid the foundation for the prestigious big match.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item cadet bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=College+Cadet+Corps+1910" alt="Cadet Corps" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">Cadet Corps</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">College Cadet Platoon (1910)</h3>
+                        <p class="text-gray-300 text-sm">Established in 1903, the Cambrian Cadet Corps has a stellar history of discipline, leadership, and drill championships.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item architecture bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=Lunawa+Lagoon+Facade" alt="Lunawa Lagoon Facade" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">Campus</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">Campus by Lunawa Lagoon</h3>
+                        <p class="text-gray-300 text-sm">The picturesque 15-acre campus bordered by Galle Road and the serene Lunawa Lagoon in Moratuwa.</p>
+                    </div>
+                </div>
+
+                <div class="gallery-item sports bg-purple-950/60 border border-yellow-500/20 rounded-2xl overflow-hidden shadow-xl hover:border-yellow-400 transition group">
+                    <div class="relative h-64 overflow-hidden bg-purple-900">
+                        <img src="https://placehold.co/600x400/3A053E/FFD700?text=Battle+of+the+Golds+Spectacle" alt="Big Match Spectacle" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+                        <span class="absolute top-3 right-3 bg-purple-950/80 text-yellow-400 border border-yellow-500/40 text-xs px-3 py-1 rounded-full font-cinzel">Big Match</span>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-cinzel text-lg font-bold text-white mb-2">The Battle of the Golds</h3>
+                        <p class="text-gray-300 text-sm">A sea of purple, gold, and maroon during the annual big match encounter against St. Sebastian's College.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CMBU Official Media & Channel Integration Section -->
+    <section id="cmbu-channel" class="py-20 bg-[#16051A] border-t border-b border-yellow-500/20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center space-x-2 bg-yellow-400/10 border border-yellow-400/30 px-4 py-1.5 rounded-full mb-4">
+                    <i class="fa-solid fa-video text-yellow-400"></i>
+                    <span class="font-cinzel text-yellow-300 text-xs tracking-widest uppercase font-bold">Official Media Partner</span>
+                </div>
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-yellow-400 uppercase tracking-wider">CMBU Live & Broadcast Archive</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-400 mt-2 text-sm sm:text-base">Streaming live footage, historical coverages, and event highlights straight from the Cambrians' Media & Broadcasting Unit</p>
+            </div>
+
+            <!-- Channel Links Bar -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="https://www.youtube.com/@cmbulive" target="_blank" rel="noopener noreferrer" class="bg-red-600 hover:bg-red-700 text-white font-cinzel font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition flex items-center space-x-2">
+                    <i class="fa-brands fa-youtube text-lg"></i>
+                    <span>Subscribe to CMBU YouTube (@cmbulive)</span>
+                </a>
+                <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-cinzel font-bold text-xs sm:text-sm px-6 py-3 rounded-xl shadow-lg transition flex items-center space-x-2">
+                    <i class="fa-brands fa-facebook text-lg"></i>
+                    <span>Follow CMBU on Facebook</span>
+                </a>
+            </div>
+
+            <!-- Embedded Content Grid using CMBU Footage style -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Video Card 1 -->
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="relative aspect-video bg-purple-900">
+                        <img src="https://placehold.co/600x340/2C0630/FFD700?text=CMBU+150th+Walk+Live" alt="150th Walk Footage" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@cmbulive" target="_blank" class="w-12 h-12 rounded-full bg-yellow-400 text-purple-950 flex items-center justify-center shadow-lg hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </a>
+                        </div>
+                        <span class="absolute top-3 left-3 bg-red-600 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">CMBU Exclusive</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-cinzel text-lg font-bold text-white mb-2">150th Anniversary Walk Highlights</h3>
+                            <p class="text-gray-300 text-sm">Captured through the lens of CMBU production crews, covering the massive turnout of students and alumni.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-purple-900 text-xs text-yellow-400 font-medium flex items-center justify-between">
+                            <span><i class="fa-solid fa-eye mr-1"></i> Official Broadcast</span>
+                            <span>CMBU Live</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 2 -->
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="relative aspect-video bg-purple-900">
+                        <img src="https://placehold.co/600x340/2C0630/FFD700?text=Sadhbhashana+Media+Event" alt="Sadhbhashana Media Competitions" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@cmbulive" target="_blank" class="w-12 h-12 rounded-full bg-yellow-400 text-purple-950 flex items-center justify-center shadow-lg hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </a>
+                        </div>
+                        <span class="absolute top-3 left-3 bg-purple-600 text-white text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Flagship Event</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-cinzel text-lg font-bold text-white mb-2">Sadhbhashana Media Competitions</h3>
+                            <p class="text-gray-300 text-sm">Highlights from Sri Lanka's largest school media competition organized annually by the CMBU team.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-purple-900 text-xs text-yellow-400 font-medium flex items-center justify-between">
+                            <span><i class="fa-solid fa-trophy mr-1"></i> National Scale</span>
+                            <span>CMBU Production</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Video Card 3 -->
+                <div class="bg-purple-950/70 border border-yellow-500/30 rounded-2xl overflow-hidden shadow-xl flex flex-col">
+                    <div class="relative aspect-video bg-purple-900">
+                        <img src="https://placehold.co/600x340/2C0630/FFD700?text=Cambrian+Documentary+Series" alt="Documentary Feed" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                            <a href="https://www.youtube.com/@cmbulive" target="_blank" class="w-12 h-12 rounded-full bg-yellow-400 text-purple-950 flex items-center justify-center shadow-lg hover:scale-110 transition">
+                                <i class="fa-solid fa-play ml-0.5"></i>
+                            </a>
+                        </div>
+                        <span class="absolute top-3 left-3 bg-yellow-500 text-purple-950 text-[10px] font-bold px-2.5 py-1 rounded uppercase tracking-wider">Documentary</span>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="font-cinzel text-lg font-bold text-white mb-2">150 Years of History Documentaries</h3>
+                            <p class="text-gray-300 text-sm">Special documentary productions showcasing historic structures, sports lore, and tradition by Lunawa Lagoon.</p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-purple-900 text-xs text-yellow-400 font-medium flex items-center justify-between">
+                            <span><i class="fa-solid fa-film mr-1"></i> Archives</span>
+                            <span>CMBU Editing Crew</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Guestbook / Cambrian Wishes Wall -->
+    <section id="wishes" class="py-20 bg-[#120415]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="font-cinzel text-3xl sm:text-4xl font-bold text-yellow-400 uppercase tracking-wider">Cambrian Wishes Wall</h2>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <p class="text-gray-400 mt-2 text-sm sm:text-base">Leave your congratulatory message for the 150th Sesquicentennial Anniversary</p>
+            </div>
+
+            <!-- Wish Form -->
+            <div class="bg-purple-950/80 border border-yellow-500/30 rounded-3xl p-6 sm:p-10 shadow-2xl mb-12">
+                <form id="wish-form" onsubmit="handleWishSubmit(event)" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs font-cinzel uppercase tracking-wider text-yellow-400 mb-2">Your Name</label>
+                            <input type="text" id="wish-name" required placeholder="e.g., Chamara Perera (Batch of '05)" class="w-full bg-purple-900/50 border border-purple-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-cinzel uppercase tracking-wider text-yellow-400 mb-2">Batch / Connection</label>
+                            <input type="text" id="wish-batch" required placeholder="e.g., Old Cambrian / Well-wisher" class="w-full bg-purple-900/50 border border-purple-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-cinzel uppercase tracking-wider text-yellow-400 mb-2">Your Congratulatory Message</label>
+                        <textarea id="wish-message" rows="4" required placeholder="Write your heartfelt message for the 150th Sesquicentennial anniversary..." class="w-full bg-purple-900/50 border border-purple-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-yellow-400 transition"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-purple-950 font-cinzel font-bold px-10 py-4 rounded-xl shadow-xl transition transform hover:-translate-y-0.5 inline-flex items-center space-x-2">
+                            <i class="fa-solid fa-paper-plane"></i>
+                            <span>Publish Cambrian Wish</span>
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Live Dynamic Wall Grid -->
+            <div id="wishes-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-12">
+                <div class="bg-purple-900/40 border border-yellow-500/20 rounded-2xl p-6 relative shadow-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-cinzel font-bold text-yellow-400">Dr. Ananda Gunawardena</span>
+                        <span class="text-xs bg-purple-900 text-purple-300 px-3 py-1 rounded-full border border-purple-700">Batch of '88</span>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Happy 150th Anniversary to our beloved alma mater! May the purple and gold flag fly high for centuries to come. Ich Dien!"</p>
+                    <span class="block text-right text-[10px] text-gray-500 mt-3">September 13, 2026</span>
+                </div>
+
+                <div class="bg-purple-900/40 border border-yellow-500/20 rounded-2xl p-6 relative shadow-lg">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="font-cinzel font-bold text-yellow-400">Kasun Fernando</span>
+                        <span class="text-xs bg-purple-900 text-purple-300 px-3 py-1 rounded-full border border-purple-700">Batch of 2015</span>
+                    </div>
+                    <p class="text-gray-300 text-sm italic">"Proud to be a Cambrian. Honoring 150 years of unmatched tradition, discipline, and brotherhood by the Lunawa lagoon."</p>
+                    <span class="block text-right text-[10px] text-gray-500 mt-3">September 12, 2026</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B020E] border-t border-yellow-500/30 text-gray-400 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+                <div class="md:col-span-2 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 rounded-full bg-gradient-to-br from-yellow-400 to-amber-600 flex items-center justify-center text-purple-950 font-bold">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                        </div>
+                        <span class="font-cinzel font-bold text-lg text-yellow-400 tracking-wider">PRINCE OF WALES' COLLEGE</span>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed max-w-md">
+                        Established in 1876 by Sir Charles Henry de Soysa. Celebrating 150 years of excellence, character building, and leadership in Moratuwa, Sri Lanka. Official Media partner: CMBU.
+                    </p>
+                    <div class="flex space-x-4 pt-2">
+                        <a href="https://www.youtube.com/@cmbulive" target="_blank" class="w-10 h-10 rounded-full bg-purple-900/60 border border-yellow-500/30 flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-purple-950 transition"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://www.facebook.com" target="_blank" class="w-10 h-10 rounded-full bg-purple-900/60 border border-yellow-500/30 flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-purple-950 transition"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-purple-900/60 border border-yellow-500/30 flex items-center justify-center text-yellow-400 hover:bg-yellow-400 hover:text-purple-950 transition"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="font-cinzel text-white font-bold text-sm tracking-wider uppercase mb-4 border-l-2 border-yellow-400 pl-3">Navigation</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#hero" class="hover:text-yellow-400 transition">Home</a></li>
+                        <li><a href="#principal" class="hover:text-yellow-400 transition">Principal's Address</a></li>
+                        <li><a href="#history" class="hover:text-yellow-400 transition">Historical Heritage</a></li>
+                        <li><a href="#museum" class="hover:text-yellow-400 transition">Vintage Archive</a></li>
+                        <li><a href="#cmbu-channel" class="hover:text-yellow-400 transition">CMBU Media Feed</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="font-cinzel text-white font-bold text-sm tracking-wider uppercase mb-4 border-l-2 border-yellow-400 pl-3">Contact Us</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li class="flex items-start space-x-3">
+                            <i class="fa-solid fa-location-dot text-yellow-400 mt-1"></i>
+                            <span>2AD, Galle Road, Moratuwa, Sri Lanka</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-phone text-yellow-400"></i>
+                            <span>+94 11 264 5336</span>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <i class="fa-solid fa-envelope text-yellow-400"></i>
+                            <span>info@princeofwales.edu.lk</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-purple-900/80 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-500">
+                <p>&copy; 1876 - 2026 Prince of Wales' College, Moratuwa. All Rights Reserved. Sesquicentennial Edition.</p>
+                <p class="mt-2 sm:mt-0 font-cinzel text-yellow-400/70">"Ich Dien" • "Nihil Per Saltum"</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal Popup -->
+    <div id="video-modal" class="fixed inset-0 z-50 hidden bg-black/90 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-purple-950 border border-yellow-500/40 rounded-3xl max-w-2xl w-full p-6 relative shadow-2xl">
+            <button onclick="closeVideoModal()" class="absolute top-4 right-4 text-gray-400 hover:text-yellow-400 text-2xl focus:outline-none">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modal-content" class="space-y-4 pt-2">
+                <h3 id="modal-title" class="font-cinzel text-xl font-bold text-yellow-400"></h3>
+                <div class="aspect-video bg-black rounded-xl overflow-hidden flex items-center justify-center border border-purple-800">
+                    <div class="text-center p-6 text-gray-400">
+                        <i class="fa-solid fa-circle-play text-5xl text-yellow-400 mb-3 animate-pulse"></i>
+                        <p class="text-sm">Simulated Live Stream / CMBU Feed</p>
+                    </div>
+                </div>
+                <p id="modal-desc" class="text-gray-300 text-sm leading-relaxed"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Interactivity -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Gallery Filter Logic
+        function filterGallery(category) {
+            const tabs = document.querySelectorAll('.gallery-tab');
+            tabs.forEach(tab => {
+                tab.classList.remove('bg-yellow-400', 'text-purple-950', 'active-tab');
+                tab.classList.add('bg-purple-900/80', 'text-gray-200', 'border', 'border-purple-700');
+            });
+
+            event.target.classList.remove('bg-purple-900/80', 'text-gray-200', 'border', 'border-purple-700');
+            event.target.classList.add('bg-yellow-400', 'text-purple-950', 'active-tab');
+
+            const items = document.querySelectorAll('.gallery-item');
+            items.forEach(item => {
+                if (category === 'all' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Video Modal Handler
+        function playVideoModal(title, description) {
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-desc').innerText = description;
+            document.getElementById('video-modal').classList.remove('hidden');
+        }
+
+        function closeVideoModal() {
+            document.getElementById('video-modal').classList.add('hidden');
+        }
+
+        // Wish Form Interactive Submission
+        function handleWishSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('wish-name').value;
+            const batch = document.getElementById('wish-batch').value;
+            const message = document.getElementById('wish-message').value;
+
+            const grid = document.getElementById('wishes-grid');
+            const newCard = document.createElement('div');
+            newCard.className = 'bg-purple-900/40 border border-yellow-500/20 rounded-2xl p-6 relative shadow-lg animate-fade-in';
+            
+            const today = new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+
+            newCard.innerHTML = `
+                <div class="flex items-center justify-between mb-3">
+                    <span class="font-cinzel font-bold text-yellow-400">${escapeHtml(name)}</span>
+                    <span class="text-xs bg-purple-900 text-purple-300 px-3 py-1 rounded-full border border-purple-700">${escapeHtml(batch)}</span>
+                </div>
+                <p class="text-gray-300 text-sm italic">"${escapeHtml(message)}"</p>
+                <span class="block text-right text-[10px] text-gray-500 mt-3">${today}</span>
+            `;
+
+            grid.prepend(newCard);
+
+            document.getElementById('wish-form').reset();
+            alert('Thank you! Your Cambrian wish has been added to the Sesquicentennial Wall.');
+        }
+
+        function escapeHtml(text) {
+            const map = {
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#039;'
+            };
+            return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+        }
+    </script>
+</body>
+</html>
